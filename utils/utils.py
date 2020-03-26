@@ -12,5 +12,11 @@ def computeDistance(chromosomeRepres,problParamter):
     return fitness
 
 def euclideanDistance(x,y):
-    # return math.sqrt(sum([(a - b) ** 2 for a, b in zip(x, y)]))
-    return math.sqrt((x[0]-y[0])**2+(x[1]-y[1])**2)
+    return math.sqrt(sum([(a - b) ** 2 for a, b in zip(x, y)]))
+
+def generateARandomPermutation(n):
+    perm = [i for i in range(n)]
+    pos1 = randint(0, n - 1)
+    pos2 = randint(0, n - 1)
+    perm[pos1], perm[pos2] = perm[pos2], perm[pos1]
+    return perm

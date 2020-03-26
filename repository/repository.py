@@ -1,8 +1,10 @@
 from utils.utils import euclideanDistance
+
 class Repository:
     """
         fileNameIn - name of the file with the graph
         fileNameOut - name of the file to write
+        adjacency - true if the graph is stored as an adjacency matrix
     """
     def __init__(self,fileNameIn,fileNameOut,adjacency):
         self.__fileNameIn = fileNameIn
@@ -44,10 +46,10 @@ class Repository:
         for i in range(0,self.__noNodes):
             index = startIndex + i
             x = float(lines[index].split(" ")[1])
-            y = float(lines[index].split(" ")[2]) 
+            y = float(lines[index].split(" ")[2])
             nodes.append((x,y))
-        neighbours = []
         for firstNode in nodes:
+            neighbours = []
             for secondNode in nodes:
                  neighbours.append(euclideanDistance(firstNode,secondNode))
             self.__graph.append(neighbours)

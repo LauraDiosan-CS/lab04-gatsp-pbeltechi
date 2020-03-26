@@ -5,11 +5,10 @@ class Ui:
 
     def run(self):
         try:
-            # sn = int(input("Source node = "))
             # popsize = int(input("Population size ="))
             # nogen = int(input("Generations number = "))
             # chromo = self.__service.solveTsp(sn,popsize,nogen)
-            chromo = self.__service.solveTsp(0,500,500)
+            chromo = self.__service.solveTsp(200,200)
             print("Best chromo of all: ")
             print(chromo)
         except ValueError as e:
